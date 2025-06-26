@@ -1,0 +1,51 @@
+Scenario - 3
+
+:Sir
+
+Window("Tour").Activate
+Window("Tour").WinEdit("CNAME").Set "Ramesh"
+Window("Tour").WinMaskEdit("DOT").Set "24/07/2025"
+
+//Window("Tour").WinEdit("From").Set "Chennai"
+//Window("Tour").WinEdit("To").Set "Bengaluru"
+
+Window("Tour").WinRadioButton("Male").Set
+//Window("Tour").WinRadioButton("Female")
+Window("Tour").WinCheckBox("Breakfast").Set "On"
+Window("Tour").WinCheckBox("Lunch").Set "Off"
+Window("Tour").WinCheckBox("Dinner").Set "On"
+
+Window("Tour").WinButton("OK").CLick
+Window("Tour").WinButton("Clear")
+Window("Tour").WinButton("Cancel")
+
+
+
+//FOR BROWSER
+:Student
+ 
+Browser("BN").Page("Tour").WebEdit("Cname").Set "Ramesh"
+Browser("BN").Page("Tour").WebEdit("DOT").Set 24-07-2025
+Browser("BN").Page("Tour").WebEdit("From").Set "Chennai"
+Browser("BN").Page("Tour").WebEdit("To").Set "Bengaluru"
+Browser("BN").Page("Tour").WebRadioButton("Male")
+Browser("BN").Page("Tour").WebRadioButton("Female")
+Browser("BN").Page("Tour").WebCheckBox("Breakfast")
+Browser("BN").Page("Tour").WebCheckBox("Lunch")
+Browser("BN").Page("Tour").WebCheckBox("Dinner")
+Browser("BN").Page("Tour").WebButton("OK")
+Browser("BN").Page("Tour").WebButton("Clear")
+Browser("BN").Page("Tour").WebButton("Cancel")
+
+
+Sir: 
+
+Browser("IRCTC").WebEdit("CNAME").Set "Ramesh"
+Browser("IRCTC").WebMaskEdit("DOT").set "12/12/2025"
+Browser("IRCTC").WebRadioButton("Male").Set
+
+Browser("IRCTC").WebCheckBox("BF").Set "On"
+Browser("IRCTC").WebCheckBox("Lunch").Set "Off"
+Browser("IRCTC").WebCheckBox("Dinner").Set "On"
+
+Browser("IRCTC").WebButton("OK").Click

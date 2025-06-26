@@ -1,0 +1,28 @@
+Day 1
+ 
+Introduction to Browser Automation, What is Selenium and Overview, History and evolution of Selenium, Selenium Components, Supported programming languages, Cross-browser and cross-platform compatibility, Advantages and limitations of Selenium,
+ 
+Day 2
+ 
+ 
+Selenium Webdriver component, Understanding the WebDriver Architecture, Installing JDK and Eclipse IDE, Downloading Selenium WebDriver, Configuring Selenium WebDriver with Eclipse,
+ 
+ 
+Day 3
+ 
+ 
+Locating GUI Elements in AUT, Locating Elements, First Selenium Webdriver Script, Launching Browsers in Selenium
+ 
+ 
+Day 4
+ 
+ 
+Find Elements, Handling Shadow DOM, Relative and Chained Locators, Locating By XPath, 
+ 
+ 
+Day 5:
+ 
+ 
+Handling dropdowns, Radio buttons, Tag Name locating, Desired Capabilities, Selenium WebDriver Commands, Find Element vs FindElements
+ 
+ 
