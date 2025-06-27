@@ -28,3 +28,15 @@ value - The list of variables used to fill the parameters of this method.
 @Test - Marks a class or a method as part of the test.
 
 @Parameters - Describes how to pass parameters to a @TestMethod.
+
+………………………………………………………………………………………………………………………………………………………………………….
+
+alwaysRun - if set to true, this test method will always be run even if it depends on a method that failed.
+
+groups: The list of groups this class/method belongs to.
+
+timeOut: The maximum number of milliseconds this test should take.
+
+expectedExceptions: The list of exceptions that a test method is expected to throw.
+
+Priority - The priority for this test method. Lower priorities will be scheduled first.
