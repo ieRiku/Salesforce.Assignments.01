@@ -1,0 +1,8 @@
+
+List of TestNG Annotations:
+
+@BeforeSuite - This annotated method will be run before all tests in the suite have run.
+
+@AfterSuite - This annotated method will be run after all tests in this suite have run.
+
+@BeforeTest - This annotated method will be run before any test method belonging to the classes inside the <test> tag is run.
