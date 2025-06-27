@@ -6,3 +6,25 @@ List of TestNG Annotations:
 @AfterSuite - This annotated method will be run after all tests in this suite have run.
 
 @BeforeTest - This annotated method will be run before any test method belonging to the classes inside the <test> tag is run.
+
+@BeforeGroup - The list of groups that this configuration method will run before. This method is guaranteed to run shortly before the first test method that belongs to any of these groups is invoked.
+
+@AfterGroups - The list of groups that this configuration method will run after. This method is guaranteed to run shortly after the last test method that belongs to any these group is invoked.
+
+@BeforeClass - This annotated method will be run before the first test method in the current class is invoked.
+
+@AfterClass - This annotated method will be run after all the test methods in the current class have been run.
+
+@BeforeMethod: The annotated method will be run before each test method.
+
+@AfterMethod: This annotated method will be run after each test method.
+
+enabled: Whether methods on this class / method belongs to.
+
+@Listeners - Defines listeners on a test class.
+
+value - The list of variables used to fill the parameters of this method.
+
+@Test - Marks a class or a method as part of the test.
+
+@Parameters - Describes how to pass parameters to a @TestMethod.
