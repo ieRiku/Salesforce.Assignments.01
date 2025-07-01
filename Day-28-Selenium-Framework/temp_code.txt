@@ -1,23 +1,89 @@
+WebDriver driver;
+
+@Test (dataProvider="LoginData")
+
+public void adminLogin(String Uname, String Pwd) throws InterruptedException {
+
+System.setProperty("webdriver.chrome.driver", "D:\\drivers\\chromedriver.exe");
+
+driver = new ChromeDriver();
+
+driver.manage().window().maximize();
+ 
+driver.get("http://dev.login.salesforc.com");
+
+driver.findElement(By.name("username")).sendKeys(gskguptha2023619@agentforce.com);
+
+driver.findElement(By.name("password")).sendKeys(Pwd);
+
+driver.findElement(By.id("login")).click();
+
+Thread.sleep(1000);
+ 
+String url = driver.getCurrentUrl();
+ 
+}
+
+@AfterMethod
+
+public void closeBrowser() {
+
+driver.close();
+
+}
+
+@DataProvider (name ="LoginData")
+
+public Object [][] myTestdata(){
+
+String inputData [][] = {
+
+		{"gskguptha2023619@agentforce.com", "password"},
+
+		{"gskguptha2023619@agentforce.com", "password"},
+
+								}
+
+return inputData
+
+}
+
+ 
+}
+
+ 
 System.setProperty("webdriver.chrome.driver", "E:\\\chromedriver.exe");
+
 FileReader myFile = new FileReader ("E:\\td.txt");
+
 BufferedReader br = new BufferedReader(myFile);	
+
 String line;
+
 int lineCount=0;
+
 int iteation=0;
  
 while ((line = br.readLine()) !=null ) {
+
 lineCount = lineCount+1;
  
 if (lineCount>1) {
+
 String inputData [] = line.split(", ", 2);
+
 iteation=iteation+1;
  
 WebDriver driver = new ChromeDriver();
+
 driver.manage().window().maximize();
  
 driver.get("http://login.salesforc.com");
+
 driver.findElement(By.name("username")).sendKeys(inputData[0]);
+
 driver.findElement(By.name("password")).sendKeys(inputData[1]);
+
 driver.findElement(By.id("Login")).click();
  
 String url = driver.getCurrentUrl();
@@ -26,9 +92,17 @@ String url = driver.getCurrentUrl();
 }
  
 driver.close();
+
 }
+
 }
+
 myFile.close();
+
 br.close();
+
 }
+
 }
+
+ 
