@@ -1,0 +1,51 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+import org.testng.Assert; // Added for assertion, though not used in original snippet's check
+
+public class SeleniumLoginTest { // Renamed class for clarity
+
+    WebDriver driver; // Declared at class level to be accessible by @AfterMethod
+
+    @Test(dataProvider = "LoginData")
+    public void adminLogin(String Uname, String Pwd) throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "D:\\drivers\\chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+
+        driver.get("http://dev.login.salesforce.com"); // Corrected typo: salesforc -> salesforce
+
+        // Use the parameters Uname and Pwd from the DataProvider
+        driver.findElement(By.name("username")).sendKeys(Uname);
+        driver.findElement(By.name("password")).sendKeys(Pwd);
+        driver.findElement(By.id("login")).click(); // Assuming 'login' is the correct ID, check your HTML if 'Login' was intended
+
+        Thread.sleep(1000); // Wait for 1 second
+
+        String url = driver.getCurrentUrl();
+        System.out.println("Current URL after login attempt: " + url);
+        // You might want to add an assertion here, e.g.:
+        // Assert.assertTrue(url.contains("salesforce.com"), "Login was not successful!");
+    }
+
+    @AfterMethod
+    public void closeBrowser() {
+        if (driver != null) { // Ensure driver is not null before closing
+            driver.quit(); // Use quit() to close all associated windows and terminate the WebDriver session
+        }
+    }
+
+    @DataProvider(name = "LoginData")
+    public Object[][] myTestdata() {
+        // Hardcoded data for demonstration.
+        // If you intend to read from a file, you'd re-introduce FileReader/BufferedReader here.
+        Object[][] inputData = {
+                {"gskguptha2023619@agentforce.com", "password"},
+                {"anotheruser@agentforce.com", "anotherpassword"} // Added another entry for demonstration
+        };
+        return inputData;
+    }
+}
