@@ -1,0 +1,16 @@
+
+AddSheet – It is used for adding an extra sheet into the run time datatable
+
+DeleteSheet- it is used for deleting an extra sheeting into the run time datatable
+
+Import – This method is used to import the excel file
+
+ImportSheet – This method is used to import the specific excel file
+
+Export – This method is used to export the excel file
+
+ExportSheet – This method is used to export the specific sheet
+
+SetCurrentRow – This method is used to focus on a specific row
+
+SetNextRow – This method is used to focus, next
