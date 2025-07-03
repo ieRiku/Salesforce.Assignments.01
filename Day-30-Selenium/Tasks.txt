@@ -1,0 +1,7 @@
+1. Capture the Link - Link Available or not
+
+2. No. of links available
+
+3. Broken link
+
+4. ListBox selection using XPath.
