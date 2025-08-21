@@ -1,0 +1,43 @@
+Axis	Description	Example (Facebook)
+
+ancestor	Selects all ancestors of current node (parent, grandparent, great grandparents	//input[@id='email']/ancestor::form
+
+ancestor-or-self	Ancestors + the node itself	//input[@id='email']/ancestor-or-self::div
+
+attribute	Selects attributes of node	//input[@id='email']/attribute::name
+
+child	Direct children	//form[@id='login_form']/child::input
+
+descendant	All descendants (children, grandchildren and so on)	//form[@id='login_form']/descendant::input
+
+descendant-or-self	Node + descendants	//form[@id='login_form']/descendant-or-self::input
+
+following	All nodes after the current node	//input[@id='email']/following::input
+
+following-sibling	Siblings after currrent node	//input[@id='email']/following-sibling::input
+
+preceding	All nodes before current node	//input[@id='pass']/preceding::input
+
+preceding-sibling	Siblings before current node	//input[@id='pass']/preceding-sibling::input
+
+parent	Immediate parent	//input[@id='email']/parent::div
+
+self	The current node	//input[@id='email']/self::input
+
+ 
+ 
+Axis	Description	Example (Facebook)
+ancestor	Selects all ancestors of current node (parent, grandparent, great grandparents	//input[@id='email']/ancestor::form
+ancestor-or-self	Ancestors + the node itself	//input[@id='email']/ancestor-or-self::div
+attribute	Selects attributes of node	//input[@id='email']/attribute::name
+child	Direct children	//form[@id='login_form']/child::input
+descendant	All descendants (children, grandchildren and so on)	//form[@id='login_form']/descendant::input
+descendant-or-self	Node + descendants	//form[@id='login_form']/descendant-or-self::input
+following	All nodes after the current node	//input[@id='email']/following::input
+following-sibling	Siblings after currrent node	//input[@id='email']/following-sibling::input
+preceding	All nodes before current node	//input[@id='pass']/preceding::input
+preceding-sibling	Siblings before current node	//input[@id='pass']/preceding-sibling::input
+parent	Immediate parent	//input[@id='email']/parent::div
+self	The current node	//input[@id='email']/self::input
+ 
+ 

@@ -1,0 +1,61 @@
+1.On creation of Contact, if email is not blank then set Status - Active
+
+2.When account is created or updated, if the Industry - Education, set Type - Prospect
+
+3.When contact is created, if contact's account is filled then map Account's email to contact email.
+
+4. When opportunity stage - closed won, then set Close Date = Today()
+
+5. When opportunity is created, if the amount>50,000 then create a Task(object - record) to follow up.
+
+6. When lead owner is changed, please send notification to the new lead owner saying new lead has been assigned to you
+
+7. Prevent inactive contacts from being updated - if contact status is inactive then throw error on contact update saying 'Inactive contacts cannot be updated'
+
+8. When account is updated, If account type-Customer, then update all related contacts status - 'Customer Contact'
+
+9. When a Case is closed, update a custom field Case_Closed_Date__c with today’s date.
+
+10. Update Account Rating to "Hot" if any related Opportunity is marked “Closed Won”.
+
+
+
+
+
+Validation Rule - 
+1. Ensure Contact’s Email matches a certain pattern (e.g., must end with .com or .org).
+
+2. Prevent changing Stage once it reaches 'Closed Lost'
+
+3. Prevent changing stage back to any earlier stage (chronological enforcement)
+
+4. Prevent Stage change from ‘Closed Won’ back to any other stage
+5. Ensure that a Contact’s Birthdate is not in the future.
+ 
+
+
+
+Security 
+
+1. You have Sales Reps and Sales Managers.
+
+Sales Reps should see only their own Opportunities.
+
+Sales Managers should see all Opportunities of the reps under them.
+
+2. A custom object Invoice__c has a field Status__c with values like “Draft”, “Submitted”, “Approved”.
+
+After the record is “Approved”, no edits should be allowed. 
+
+Note: Try to complete this via layouts and visibility control. When submitting the layout will allow to edit but once the record is "Approved" convert it to read-only type layout. (one of the approaches)
+
+3. You have a custom object Project__c with OWD = Private.
+
+You want to share records with other users who belong to the same Team__c value on User record.
+
+4. You have a field called Salary__c on the Employee object.
+
+This field should only be visible to users with the “HR” profile.
+
+All other users must not see this field — even in reports.
+ 
