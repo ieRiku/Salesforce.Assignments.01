@@ -2,10 +2,12 @@
 <testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-08-22T09:52:05 IST" name="Suite" finished-at="2025-08-22T09:52:05 IST" duration-ms="10">
+  <suite started-at="2025-08-22T10:36:10 IST" name="Suite" finished-at="2025-08-22T10:36:10 IST" duration-ms="66">
     <groups>
     </groups>
-    <test started-at="2025-08-22T09:52:05 IST" name="Test" finished-at="2025-08-22T09:52:05 IST" duration-ms="10">
-    </test> <!-- Test -->
+    <test started-at="2025-08-22T10:36:10 IST" name="Test with chrome" finished-at="2025-08-22T10:36:10 IST" duration-ms="9">
+    </test> <!-- Test with chrome -->
+    <test started-at="2025-08-22T10:36:10 IST" name="Test with edge" finished-at="2025-08-22T10:36:10 IST" duration-ms="1">
+    </test> <!-- Test with edge -->
   </suite> <!-- Suite -->
 </testng-results>

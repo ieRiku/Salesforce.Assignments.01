@@ -4,6 +4,7 @@ import base.BaseClass;
 import pages.HomePage;
 import pages.LoginPage;
 
+
 public class BookApplication extends BaseClass{
 	public static void main(String[] args) throws InterruptedException {
 		

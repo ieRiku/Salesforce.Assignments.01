@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite thread-count="2" parallel="classes" name="Suite">
-  <test thread-count="2" parallel="classes" name="Test">
+	<parameter name="browser" value="chrome"></parameter>
+  <test name="Test with chrome">
+  	<parameter name="browser" value="chrome"></parameter>
+  	<classes>
+  		<class name="tests.BookApplication"></class>
+  	</classes>
   </test> <!-- Test -->
+  
+  <test name="Test with edge">
+  	<parameter name="browser" value="edge"></parameter>
+  	<classes>
+  		<class name="tests.BookApplication"></class>
+  	</classes>
+  </test>
 </suite> <!-- Suite -->
