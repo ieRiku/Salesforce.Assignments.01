@@ -1,21 +1,21 @@
 package tests;
 
+import java.io.IOException;
+
 import base.BaseClass;
-import pages.HomePage;
-import pages.LoginPage;
+import utilities.ExcelUtils;
 
 
 public class BookApplication extends BaseClass{
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, IOException {
 		
-		OpenBrowser("https://demoqa.com/login");
-		LoginPage lp = new LoginPage(driver);
-		HomePage hp = new HomePage(driver);
-		lp.EnterUsername();
-		lp.EnterPassword();
-		lp.ClickLogin();	
-		hp.ClickLogout();
-		
-		CloseBrowser();
+		ExcelUtils.setupExcel("src/test/resources/Data.xlsx");
+		int row = ExcelUtils.getRowCount();
+		for(int i=1;i<row;i++) {
+			String user = ExcelUtils.getCellData(i, 0);
+			String pass = ExcelUtils.getCellData(i, 1);
+			
+			System.out.println(user +" "+ pass);
+		}
 	}
 }

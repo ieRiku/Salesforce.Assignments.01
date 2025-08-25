@@ -8,21 +8,21 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
 public class ExcelUtils {
-	XSSFWorkbook w;
-	XSSFSheet s;
+	static XSSFWorkbook w;
+	static XSSFSheet s;
 	
-	public void setupExcel(String filePath) throws IOException{
+	public static void setupExcel(String filePath) throws IOException{
 		FileInputStream fs = new FileInputStream(filePath);
 		w = new XSSFWorkbook(fs);
 		s = w.getSheet("Sheet1");
 	}
 	
-	public String getCellData(int r, int c) {
+	public static String getCellData(int r, int c) {
 		String data = s.getRow(r).getCell(c).toString();
 		return data;
 	}
 	
-	public int getRowCount() {
+	public static int getRowCount() {
 		int rowCount = s.getPhysicalNumberOfRows();
 		return rowCount;
 	}
