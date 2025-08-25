@@ -1,5 +1,7 @@
 package tests;
 
+import java.io.IOException;
+
 //import java.io.IOException;
 
 import base.BaseClass;
@@ -22,8 +24,10 @@ public class BookApplication extends BaseClass{
 	}
 	*/
 	
-	ConfigLoader con;
-	public static void main(String[] args) {
+	static ConfigLoader con;
+	public static void main(String[] args) throws IOException{
+		con = new ConfigLoader();
+
 		System.out.println(con.getProperty("url"));
 	}
 }
