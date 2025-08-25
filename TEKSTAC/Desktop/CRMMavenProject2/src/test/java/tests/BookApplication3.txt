@@ -1,0 +1,104 @@
+package Utilities;
+ 
+import java.io.FileInputStream;
+
+import java.io.FileNotFoundException;
+
+import java.io.IOException;
+
+import java.util.Properties;
+ 
+public class ConfigReader {
+
+	Properties pr;
+
+public ConfigReader() throws IOException {
+
+	FileInputStream fis = new FileInputStream("src/main/java/BasePackage/config.properties");
+
+	pr = new Properties();
+
+	pr.load(fis);
+
+}
+ 
+public String getProperty(String key) {
+
+	return pr.getProperty(key);
+
+	}
+
+}
+
+ 
+url=https://demoqa.com/login
+
+username=TestingJava
+password=Test@123
+DEMOQA
+ 
+package BasePackage;
+ 
+import java.io.IOException;
+
+import java.time.Duration;
+ 
+import org.openqa.selenium.WebDriver;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import org.openqa.selenium.edge.EdgeDriver;
+ 
+import Utilities.ConfigReader;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+ 
+public class BaseClass {
+ 
+	public WebDriver driver=null;
+
+	ConfigReader con;
+
+	public void OpenBrowser(String browser) throws InterruptedException, IOException {
+
+		if(browser.equalsIgnoreCase("chrome")) {
+
+		WebDriverManager.chromedriver().setup();
+
+		driver = new ChromeDriver();
+
+		Thread.sleep(2000);
+
+		}
+
+		else if(browser.equalsIgnoreCase("edge")) {
+
+			WebDriverManager.edgedriver().setup();
+
+			driver = new EdgeDriver();
+
+			Thread.sleep(2000);
+
+		}
+
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
+		driver.manage().window().maximize();
+
+		con = new ConfigReader();
+
+		String url = con.getProperty("url");
+
+		driver.get(url);		
+
+	}
+
+	public void CloseBrowser() {
+
+		driver.quit();
+
+	}
+
+}
+
+ 
