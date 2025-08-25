@@ -1,12 +1,14 @@
 package tests;
 
-import java.io.IOException;
+//import java.io.IOException;
 
 import base.BaseClass;
-import utilities.ExcelUtils;
+import base.ConfigLoader;
+//import utilities.ExcelUtils;
 
 
 public class BookApplication extends BaseClass{
+	/*
 	public static void main(String[] args) throws InterruptedException, IOException {
 		
 		ExcelUtils.setupExcel("src/test/resources/Data.xlsx");
@@ -17,5 +19,11 @@ public class BookApplication extends BaseClass{
 			
 			System.out.println(user +" "+ pass);
 		}
+	}
+	*/
+	
+	ConfigLoader con;
+	public static void main(String[] args) {
+		System.out.println(con.getProperty("url"));
 	}
 }
