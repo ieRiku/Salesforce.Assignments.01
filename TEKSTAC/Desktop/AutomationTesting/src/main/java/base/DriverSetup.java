@@ -9,9 +9,9 @@ public class DriverSetup {
 		try {
 			driver = new ChromeDriver();
 		} 
-		catch (Exception e) {}
-		
-		
+		catch (Exception e) {
+			System.out.println("err");
+		}
 		return driver;
 	}
 }
