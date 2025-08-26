@@ -5,13 +5,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DriverSetup {
 	static WebDriver driver = null;
+	
 	public static WebDriver getDriver() {
-		try {
-			driver = new ChromeDriver();
-		} 
-		catch (Exception e) {
-			System.out.println("err");
-		}
+		driver = new ChromeDriver();
 		return driver;
+	}
+	
+	static void closeDriver() {
+		driver.quit();
 	}
 }
