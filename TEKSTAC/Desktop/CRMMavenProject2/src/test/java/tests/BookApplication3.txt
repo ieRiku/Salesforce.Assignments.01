@@ -101,4 +101,62 @@ public class BaseClass {
 
 }
 
+
+
+package Utilities;
  
+import java.io.File;
+
+import java.io.IOException;
+ 
+import javax.xml.parsers.DocumentBuilder;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import javax.xml.parsers.ParserConfigurationException;
+ 
+import org.w3c.dom.Document;
+
+import org.w3c.dom.Element;
+
+import org.w3c.dom.Node;
+
+import org.w3c.dom.NodeList;
+
+import org.xml.sax.SAXException;
+ 
+ 
+public class XMLData {
+
+	public static String getData(String tag) throws ParserConfigurationException, SAXException, IOException {
+
+		File f = new File("src/test/resources/data.xml");
+
+		DocumentBuilderFactory df = DocumentBuilderFactory.newInstance();
+
+		DocumentBuilder db = df.newDocumentBuilder();
+
+		Document d = db.parse(f);
+
+		d.getDocumentElement().normalize();
+
+		NodeList nl = d.getElementsByTagName("user");
+
+		Node n= nl.item(0);
+
+		Element e = (Element)n;
+
+		return e.getElementsByTagName(tag).item(0).getTextContent();
+
+	}
+
+}
+
+ 
+<data>
+<user>
+<username>TestingJava</username>
+<password>Test@123</password>
+</user>
+</data>
+  
