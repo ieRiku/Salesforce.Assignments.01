@@ -3,11 +3,12 @@
 <suite name="Failed suite [AmazonTestSuite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="LoginAndSearchTest(failed)">
     <classes>
-      <class name="tests.CartTest">
+      <class name="tests.SearchTest">
         <methods>
-          <include name="test"/>
+          <include name="setup"/>
+          <include name="testBlankSearch"/>
         </methods>
-      </class> <!-- tests.CartTest -->
+      </class> <!-- tests.SearchTest -->
     </classes>
   </test> <!-- LoginAndSearchTest(failed) -->
 </suite> <!-- Failed suite [AmazonTestSuite] -->

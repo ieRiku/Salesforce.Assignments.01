@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-AmazonTestSuite" class="navigator-link">
-              <span class="suite-name border-passed">AmazonTestSuite</span>
+              <span class="suite-name border-failed">AmazonTestSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -92,7 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">7 methods, 1 failed,   6 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-AmazonTestSuite" class="hide-methods failed suite-AmazonTestSuite"> (hide)</a> <!-- hide-methods failed suite-AmazonTestSuite -->
+                      <a href="#" panel-name="suite-AmazonTestSuite" class="show-methods failed suite-AmazonTestSuite"> (show)</a> <!-- show-methods failed suite-AmazonTestSuite -->
+                    </span>
+                    <div class="method-list-content failed suite-AmazonTestSuite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AmazonTestSuite" title="tests.SearchTest" class="method navigator-link" hash-for-method="testBlankSearch">testBlankSearch</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-AmazonTestSuite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -111,6 +125,26 @@
                         <a href="#" panel-name="suite-AmazonTestSuite" title="tests.LoginTest" class="method navigator-link" hash-for-method="test">test</a> <!-- method navigator-link -->
                       </span>
                       <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AmazonTestSuite" title="tests.SearchTest" class="method navigator-link" hash-for-method="testApplyFilters">testApplyFilters</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AmazonTestSuite" title="tests.SearchTest" class="method navigator-link" hash-for-method="testSearchProduct">testSearchProduct</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AmazonTestSuite" title="tests.SearchTest" class="method navigator-link" hash-for-method="testSortLowToHigh">testSortLowToHigh</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AmazonTestSuite" title="tests.SearchTest" class="method navigator-link" hash-for-method="testViewProductDetails">testViewProductDetails</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                     </div> <!-- method-list-content passed suite-AmazonTestSuite -->
                   </li>
                 </ul>
@@ -123,6 +157,26 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-AmazonTestSuite" class="panel AmazonTestSuite">
+          <div class="suite-AmazonTestSuite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">tests.SearchTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testBlankSearch">
+                  </a> <!-- testBlankSearch -->
+                  <span class="method-name">testBlankSearch</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.getTitle()&quot; because &quot;this.driver&quot; is null
+	at tests.SearchTest.testBlankSearch(SearchTest.java:53)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 25 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-AmazonTestSuite-class-failed -->
           <div class="suite-AmazonTestSuite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -153,6 +207,42 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-AmazonTestSuite-class-passed -->
+          <div class="suite-AmazonTestSuite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">tests.SearchTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testApplyFilters">
+                  </a> <!-- testApplyFilters -->
+                  <span class="method-name">testApplyFilters</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSearchProduct">
+                  </a> <!-- testSearchProduct -->
+                  <span class="method-name">testSearchProduct</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testSortLowToHigh">
+                  </a> <!-- testSortLowToHigh -->
+                  <span class="method-name">testSortLowToHigh</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testViewProductDetails">
+                  </a> <!-- testViewProductDetails -->
+                  <span class="method-name">testViewProductDetails</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-AmazonTestSuite-class-passed -->
         </div> <!-- panel AmazonTestSuite -->
         <div panel-name="test-xml-AmazonTestSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -166,6 +256,7 @@
   &lt;test thread-count=&quot;5&quot; name=&quot;LoginAndSearchTest&quot;&gt;
     &lt;classes&gt;
       &lt;class name=&quot;tests.LoginTest&quot;/&gt;
+      &lt;class name=&quot;tests.SearchTest&quot;/&gt;
       &lt;class name=&quot;tests.CartTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- LoginAndSearchTest --&gt;
@@ -180,7 +271,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">LoginAndSearchTest (2 classes)</span>
+                <span class="test-name">LoginAndSearchTest (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -206,20 +297,40 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(7);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'test')
 data.setCell(0, 2, 'tests.CartTest')
-data.setCell(0, 3, 42983);
+data.setCell(0, 3, 31420);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'test')
-data.setCell(1, 2, 'tests.LoginTest')
-data.setCell(1, 3, 6452);
+data.setCell(1, 1, 'testViewProductDetails')
+data.setCell(1, 2, 'tests.SearchTest')
+data.setCell(1, 3, 15529);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testSearchProduct')
+data.setCell(2, 2, 'tests.SearchTest')
+data.setCell(2, 3, 8746);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testApplyFilters')
+data.setCell(3, 2, 'tests.SearchTest')
+data.setCell(3, 3, 6830);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'test')
+data.setCell(4, 2, 'tests.LoginTest')
+data.setCell(4, 3, 6045);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'testSortLowToHigh')
+data.setCell(5, 2, 'tests.SearchTest')
+data.setCell(5, 3, 2066);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'testBlankSearch')
+data.setCell(6, 2, 'tests.SearchTest')
+data.setCell(6, 3, 1766);
 window.suiteTableData['AmazonTestSuite']= { tableData: data, tableDiv: 'times-div-AmazonTestSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 49 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-AmazonTestSuite">
               </div> <!-- times-div-AmazonTestSuite -->
             </div> <!-- times-div -->
@@ -252,11 +363,48 @@ return data;
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
+              <div class="chronological-class-name">tests.SearchTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setup</span>
+                <span class="method-start">6049 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">testSearchProduct</span>
+                <span class="method-start">6055 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testApplyFilters</span>
+                <span class="method-start">14803 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testSortLowToHigh</span>
+                <span class="method-start">21635 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">testBlankSearch</span>
+                <span class="method-start">23703 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testViewProductDetails</span>
+                <span class="method-start">25471 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
               <div class="chronological-class-name">tests.CartTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setDriver</span>
+                <span class="method-start">41001 ms</span>
+              </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">test</span>
-                <span class="method-start">6459 ms</span>
+                <span class="method-start">41006 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">quitBrowser</span>
+                <span class="method-start">72427 ms</span>
+              </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
