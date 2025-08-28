@@ -1,17 +1,24 @@
 package pages;
 
-import org.openqa.selenium.By;
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import base.DriverSetup;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
-	static WebDriver driver;
+	WebDriver driver;
+	WebDriverWait wait;
 	String baseUrl = "https://amazon.in/";
 	
+	public LoginPage(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+	}
 	
     @FindBy(xpath = "//button[@class='a-button-text']")
     private WebElement submitButton;
@@ -31,13 +38,10 @@ public class LoginPage {
     @FindBy(xpath = "//input[@id='signInSubmit' and @class='a-button-input']")
     private WebElement submitLoginButton;
 	
+    @FindBy(css = ".a-alert-content")
+    private WebElement loginErrorBox;
 	
-	public void setDriver() {
-		driver = DriverSetup.getDriver();
-		driver.get(baseUrl);
-	}
-	
-	public void clickLogin() throws InterruptedException {
+//	public void clickLogin() throws InterruptedException {
 //		WebElement submit = driver.findElement(By.xpath("//button[@class='a-button-text']"));
 //		submit.click();
 //		WebElement loginBtn = driver.findElement(By.id("nav-link-accountList-nav-line-1"));
@@ -50,30 +54,50 @@ public class LoginPage {
 //		password.sendKeys("pass2345");
 //		WebElement submitBtn = driver.findElement(By.className("a-button-input"));
 //		submitBtn.click();
-		
-		submitButton.click();
-		Thread.sleep(100);
-		loginButton.click();
-		Thread.sleep(232);
-		emailField.sendKeys("someone123@gmail.com");
-		continueButton.click();
-		Thread.sleep(72);
-		passwordField.sendKeys("pass2134");
-		submitLoginButton.click();
-		Thread.sleep(2000);
-	}
-	
-	public static void main(String[] args) {
-		LoginPage lp = new LoginPage();
-		try {
-			lp.setDriver();
-			lp.clickLogin();
-		}
-		catch(Exception e) {
-			e.printStackTrace();
-		}
-		finally{
-			//driver.quit();
-		}
-	}
+//	}
+    
+ // Actions
+    public void clickSubmitButton() {
+        wait.until(ExpectedConditions.elementToBeClickable(submitButton)).click();
+    }
+    
+    public void clickLoginButton() {
+        wait.until(ExpectedConditions.elementToBeClickable(loginButton)).click();
+    }
+
+    public void enterEmail(String email) {
+        wait.until(ExpectedConditions.visibilityOf(emailField)).clear();
+        emailField.sendKeys(email);
+    }
+
+    public void clickContinue() {
+        wait.until(ExpectedConditions.elementToBeClickable(continueButton)).click();
+    }
+
+    public void enterPassword(String password) {
+        wait.until(ExpectedConditions.visibilityOf(passwordField)).clear();
+        passwordField.sendKeys(password);
+    }
+
+    public void clickSubmitLogin() {
+        wait.until(ExpectedConditions.elementToBeClickable(submitLoginButton)).click();
+    }
+    
+    public void login(String email, String password) {
+    	clickSubmitButton();
+        clickLoginButton();
+        enterEmail(email);
+        clickContinue();
+        enterPassword(password);
+        clickSubmitLogin();
+    }
+    
+    public boolean isLoginErrorDisplayed() {
+        try {
+            return wait.until(ExpectedConditions.visibilityOf(loginErrorBox)).isDisplayed();
+        } 
+        catch (Exception e) {
+            return false;
+        }
+    }
 }
