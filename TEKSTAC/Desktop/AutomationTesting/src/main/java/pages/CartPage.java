@@ -9,12 +9,21 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
-import base.DriverSetup;
-
 public class CartPage {
 	WebDriver driver = null;
 	WebDriverWait wait;
 	Actions actions;
+	
+	public CartPage(WebDriver driver) {
+		this.driver = driver;
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		this.actions = new Actions(driver);
+		PageFactory.initElements(driver, this);
+	}
+
+	public CartPage() {
+		this.driver = null;
+	}
 
 	@FindBy(xpath = "//div[@class='a-section a-spacing-none a-padding-none']//input[@id='add-to-cart-button']")
 	private WebElement addCartButton;
@@ -99,32 +108,4 @@ public class CartPage {
 		System.out.println("Cart Product Title: " + cartTitle);
 	}
 	
-	public void driverSetup() {
-		this.driver = DriverSetup.getDriver();
-		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		this.actions = new Actions(driver);
-		PageFactory.initElements(driver, this);
-		driver.get("https://amazon.in/");
-	}
-	
-	public void closeDriver() {
-		driver.quit();
-	}
-	
-	
-	
-	public static void main(String[] args) throws InterruptedException {
-		
-		CartPage cp = new CartPage();
-		try {	
-			cp.driverSetup();
-			Thread.sleep(20000);
-			cp.cartTest();
-			Thread.sleep(100);
-		}
-		finally {
-			cp.closeDriver();
-			System.out.println("Exited");
-		}
-	}
 }

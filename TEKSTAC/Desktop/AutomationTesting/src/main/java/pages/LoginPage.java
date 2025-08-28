@@ -12,12 +12,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class LoginPage {
 	WebDriver driver;
 	WebDriverWait wait;
-	String baseUrl = "https://amazon.in/";
 	
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 		wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+	}
+	
+	public LoginPage() {
+		this.driver = null;
 	}
 	
     @FindBy(xpath = "//button[@class='a-button-text']")
@@ -57,6 +60,8 @@ public class LoginPage {
 //	}
     
  // Actions
+    
+    
     public void clickSubmitButton() {
         wait.until(ExpectedConditions.elementToBeClickable(submitButton)).click();
     }
@@ -83,8 +88,8 @@ public class LoginPage {
         wait.until(ExpectedConditions.elementToBeClickable(submitLoginButton)).click();
     }
     
-    public void login(String email, String password) {
-    	clickSubmitButton();
+    public void loginTest(String email, String password) {
+    	//clickSubmitButton();
         clickLoginButton();
         enterEmail(email);
         clickContinue();
@@ -93,11 +98,6 @@ public class LoginPage {
     }
     
     public boolean isLoginErrorDisplayed() {
-        try {
-            return wait.until(ExpectedConditions.visibilityOf(loginErrorBox)).isDisplayed();
-        } 
-        catch (Exception e) {
-            return false;
-        }
-    }
+        return wait.until(ExpectedConditions.visibilityOf(loginErrorBox)).isDisplayed();
+    }    
 }

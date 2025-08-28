@@ -5,9 +5,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class DriverSetup {
 	static WebDriver driver = null;
+	static String url = "https://amazon.in";
 	
 	public static WebDriver getDriver() {
-		driver = new ChromeDriver();
+		if(driver == null) {
+			driver = new ChromeDriver();
+			driver.get(url);
+		}
 		return driver;
 	}
 	

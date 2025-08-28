@@ -1,5 +1,7 @@
 package tests;
 
-public class SearchTest {
+import base.DriverSetup;
+
+public class SearchTest extends DriverSetup {
 
 }

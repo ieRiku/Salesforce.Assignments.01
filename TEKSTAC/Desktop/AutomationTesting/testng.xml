@@ -3,9 +3,9 @@
 <suite name="AmazonTestSuite">
     <test name="LoginAndSearchTest">
         <classes>
-            <class name="pages.LoginTest"/>
-            <class name="test.SearchTest"/>
-            <class name="test.CartTest"/>
+            <class name="tests.LoginTest"/>
+            <!--<class name="test.SearchTest"/>-->
+            <class name="tests.CartTest"/>
         </classes>
     </test>
 </suite>
