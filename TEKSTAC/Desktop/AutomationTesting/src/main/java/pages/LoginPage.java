@@ -44,6 +44,9 @@ public class LoginPage {
     @FindBy(css = ".a-alert-content")
     private WebElement loginErrorBox;
     
+    @FindBy(xpath = "//*[@id=\"auth-error-message-box\"]/div/h4")
+    private WebElement errorBox;
+    
     //..............................................//
     public void clickSubmitButton() {
         wait.until(ExpectedConditions.elementToBeClickable(submitButton)).click();
@@ -74,8 +77,16 @@ public class LoginPage {
     public boolean isLoginErrorDisplayed() {
         return wait.until(ExpectedConditions.visibilityOf(loginErrorBox)).isDisplayed();
     }
-
-    public String getUrl() {
-    	return driver.getCurrentUrl();
+    
+    public void navigateToUrl(String url) {
+    	driver.navigate().to(url);
+    }
+    
+    public boolean loginButtonDisplayed() {
+    	return wait.until(ExpectedConditions.visibilityOf(loginButton)).isDisplayed();
+    }
+    
+    public boolean loginButtonEnabled() {
+    	return wait.until(ExpectedConditions.visibilityOf(loginButton)).isEnabled();
     }
 }

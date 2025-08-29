@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -40,6 +41,10 @@ public class CartPage {
 	@FindBy(xpath = "(//span[@class='a-truncate-cut'][contains(text(),\"HP\")])[1]")
 	private WebElement cartProductTitleElement;
 	
+//	@FindBy(css = "div[id='sc-active-06aec412-09b8-4547-9824-8430768cf21c'] span[class='a-truncate-cut']")
+//	private WebElement cartProductTitleElement;
+	
+	
 	@FindBy(xpath = "(//span[@class='a-icon a-icon-small-add'])[1]")
 	private WebElement increaseProductCount;
 	
@@ -49,6 +54,17 @@ public class CartPage {
 	@FindBy(xpath = "(//span[@class='a-icon a-icon-small-trash'])[1]")
 	private WebElement deleteFromCart;
 
+	@FindBy(xpath = "//input[@name='proceedToRetailCheckout']")
+	private WebElement proceedToBuy;
+	
+	@FindBy(xpath = "//span[@id='deliver-to-address-text']")
+	private WebElement address;
+
+	@FindBy(xpath = "//span[@id='checkout-primary-continue-button-id-announce']")
+	private WebElement orderPlace;
+	
+	
+	
 	// Methods to interact with each WebElement using Actions
 	public void clickAddToCart() {
 		wait.until(ExpectedConditions.elementToBeClickable(addCartButton));
@@ -91,21 +107,43 @@ public class CartPage {
 	}
 	
 	
-	public void cartTest() throws InterruptedException {
+	public void cartAdd() throws InterruptedException {
 		clickAddToCart();
 		String title = getProductTitle();
 		String message = getSuccessMessage();
 		clickGoToCart();
 		String cartTitle = getCartProductTitle();
-		Thread.sleep(2000);
-		increaseProductCount();
-		Thread.sleep(2000);
-		decreaseProductCount();
-		Thread.sleep(2000);
-		// Optionally print or use the retrieved values
+//		Thread.sleep(2000);
+//		increaseProductCount();
+//		Thread.sleep(2000);
+//		decreaseProductCount();
+//		Thread.sleep(2000);
+
 		System.out.println("Product Title: " + title);
 		System.out.println("Success Message: " + message);
 		System.out.println("Cart Product Title: " + cartTitle);
 	}
 	
+	public void quantityModify() throws InterruptedException {
+		increaseProductCount();
+		Thread.sleep(2000);
+		decreaseProductCount();
+		Thread.sleep(2000);
+	}
+	
+	
+	public void proceedToBuyFromCart() {
+		wait.until(ExpectedConditions.elementToBeClickable(proceedToBuy));
+		proceedToBuy.click();
+	}
+	
+	public String getAddress() {
+		wait.until(ExpectedConditions.visibilityOf(address));
+		return address.getText();
+	}
+	
+	public boolean buyingIsEnabled() {
+		wait.until(ExpectedConditions.visibilityOf(orderPlace));
+		return orderPlace.isEnabled();
+	}
 }

@@ -3,12 +3,18 @@
 <suite name="Failed suite [AmazonTestSuite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="LoginAndSearchTest(failed)">
     <classes>
+      <class name="tests.CartTest">
+        <methods>
+          <include name="placeOrder"/>
+          <include name="quitBrowser"/>
+          <include name="buyProducts"/>
+          <include name="setDriver"/>
+        </methods>
+      </class> <!-- tests.CartTest -->
       <class name="tests.SearchTest">
         <methods>
-          <include name="testApplyFilters"/>
           <include name="setup"/>
           <include name="testBlankSearch"/>
-          <include name="testSortLowToHigh"/>
         </methods>
       </class> <!-- tests.SearchTest -->
     </classes>

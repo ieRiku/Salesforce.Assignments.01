@@ -50,8 +50,14 @@ public class SearchPage {
     
     @FindBy(xpath = "\"//div[@data-component-type='s-search-result']\"")
     private WebElement allElementsLocated;
+    
+    @FindBy(xpath = "//*[@id='p_36/dynamic-picker-3']/span/a/span")
+    private WebElement rangeElement;
 
-
+    @FindBy(xpath = "//li[@id='p_72/1318476031']/span/div/a/i")
+    private WebElement ratingButton;
+    
+    
     // Actions
     public void searchProduct(String productName) {
         wait.until(ExpectedConditions.visibilityOf(searchBox)).clear();
@@ -93,5 +99,19 @@ public class SearchPage {
         catch (Exception e) {
             return "Price not available";
         }
+    }
+    
+    // Apply price range using drag and drop on sliders
+    public void applyPriceRange() {
+    	js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", rangeElement);
+    	wait.until(ExpectedConditions.elementToBeClickable(rangeElement)).click();
+    }
+
+    // Apply customer ratings using the ratingButton WebElement
+    public void applyCustomerRatings() {
+        js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);", ratingButton);
+        wait.until(ExpectedConditions.elementToBeClickable(ratingButton)).click();
     }
 }

@@ -16,7 +16,7 @@ public class LoginTest extends DriverSetup{
 		lp = new LoginPage(DriverSetup.getDriver());
 	}
 
-	@Test (priority=2)
+	@Test (priority=3)
 	public static void validLoginTest() throws InterruptedException {
 		lp.clickLoginButton();
 		lp.enterEmail(ConfigLoader.getProperty("username"));
@@ -34,11 +34,10 @@ public class LoginTest extends DriverSetup{
 		lp.clickSubmitLogin();
 	}
 
-	@Test (priority=3)
+	@Test (priority=2)
 	public static void verifyLoginTest() throws InterruptedException {
-		String getHomeUrl = lp.getUrl();
-		if(getHomeUrl.equals("https://amazon.in")) {
-			System.out.println("Success");
-		}
+		lp.navigateToUrl(ConfigLoader.getProperty("url"));
+		System.out.println(lp.loginButtonEnabled());
+		System.out.println(lp.loginButtonDisplayed());
 	}
 }

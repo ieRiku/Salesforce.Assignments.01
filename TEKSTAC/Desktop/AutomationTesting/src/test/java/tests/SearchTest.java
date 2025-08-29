@@ -27,6 +27,21 @@ public class SearchTest {
         searchPage.searchProduct("laptop");
         Assert.assertTrue(searchPage.verifyResultsDisplayed(), "Search results not displayed!");
     }
+    
+    @Test(priority = 2)
+    public void testApplyFilters() throws InterruptedException {
+        // Apply brand filter
+        searchPage.selectBrand("HP");
+        Thread.sleep(3000);
+        // Apply price range
+        searchPage.applyPriceRange();
+        
+        // Apply customer ratings.
+        searchPage.applyCustomerRatings();
+
+        // Verify results displayed after applying filters
+        Assert.assertTrue(searchPage.verifyResultsDisplayed(), "Filtered results not displayed!");
+    }
 
     @Test(priority = 3)
     public void testSortLowToHigh() {
@@ -34,20 +49,8 @@ public class SearchTest {
         Assert.assertTrue(searchPage.verifyResultsDisplayed(), "Results not visible after Low-High sort!");
     }
     
-    @Test(priority = 2)
-    public void testApplyFilters() throws InterruptedException {
-        // Search for laptops first
-        searchPage.searchProduct("laptop");
-
-        // Apply brand filter
-        searchPage.selectBrand("HP");
-        Thread.sleep(3000);
-
-        // Verify results displayed after applying filters
-        Assert.assertTrue(searchPage.verifyResultsDisplayed(), "Filtered results not displayed!");
-    }
     
-    @Test(priority = -4)
+    @Test(priority = 4)
     public void testBlankSearch() {
         searchPage.searchBlank();
         Assert.assertTrue(driver.getTitle().contains("Amazon"), "Blank search did not stay on Amazon search page!");
