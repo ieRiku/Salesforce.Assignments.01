@@ -5,15 +5,20 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigLoader {
-	Properties pr;
-	
-	public ConfigLoader() throws IOException {
-		FileInputStream fs = new FileInputStream("config/config.properties");
-		pr = new Properties();
-		pr.load(fs);
-	}
-	
-	public String getProperty(String key) {
-		return pr.getProperty(key);
-	}
+    private static Properties properties;
+
+    public static void loadConfig() {
+        try {
+            FileInputStream fis = new FileInputStream("config/config.properties");
+            properties = new Properties();
+            properties.load(fis);
+        } 
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static String getProperty(String key) {
+        return properties.getProperty(key);
+    }
 }

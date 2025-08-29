@@ -47,7 +47,7 @@ public class SearchTest {
         Assert.assertTrue(searchPage.verifyResultsDisplayed(), "Filtered results not displayed!");
     }
     
-    @Test(priority = 4)
+    @Test(priority = -4)
     public void testBlankSearch() {
         searchPage.searchBlank();
         Assert.assertTrue(driver.getTitle().contains("Amazon"), "Blank search did not stay on Amazon search page!");

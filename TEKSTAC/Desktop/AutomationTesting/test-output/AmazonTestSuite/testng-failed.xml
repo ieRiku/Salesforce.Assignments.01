@@ -5,8 +5,10 @@
     <classes>
       <class name="tests.SearchTest">
         <methods>
+          <include name="testApplyFilters"/>
           <include name="setup"/>
           <include name="testBlankSearch"/>
+          <include name="testSortLowToHigh"/>
         </methods>
       </class> <!-- tests.SearchTest -->
     </classes>

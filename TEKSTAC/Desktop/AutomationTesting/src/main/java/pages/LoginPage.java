@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage {
 	WebDriver driver;
@@ -43,29 +43,12 @@ public class LoginPage {
 	
     @FindBy(css = ".a-alert-content")
     private WebElement loginErrorBox;
-	
-//	public void clickLogin() throws InterruptedException {
-//		WebElement submit = driver.findElement(By.xpath("//button[@class='a-button-text']"));
-//		submit.click();
-//		WebElement loginBtn = driver.findElement(By.id("nav-link-accountList-nav-line-1"));
-//		loginBtn.click();
-//		WebElement email = driver.findElement(By.id("ap_email_login"));
-//		email.sendKeys("someone123@gmail.com");
-//		WebElement continueBtn = driver.findElement(By.className("a-button-input"));
-//		continueBtn.click();
-//		WebElement password = driver.findElement(By.id("ap_password"));
-//		password.sendKeys("pass2345");
-//		WebElement submitBtn = driver.findElement(By.className("a-button-input"));
-//		submitBtn.click();
-//	}
     
- // Actions
-    
-    
+    //..............................................//
     public void clickSubmitButton() {
         wait.until(ExpectedConditions.elementToBeClickable(submitButton)).click();
     }
-    
+
     public void clickLoginButton() {
         wait.until(ExpectedConditions.elementToBeClickable(loginButton)).click();
     }
@@ -87,17 +70,12 @@ public class LoginPage {
     public void clickSubmitLogin() {
         wait.until(ExpectedConditions.elementToBeClickable(submitLoginButton)).click();
     }
-    
-    public void loginTest(String email, String password) {
-    	//clickSubmitButton();
-        clickLoginButton();
-        enterEmail(email);
-        clickContinue();
-        enterPassword(password);
-        clickSubmitLogin();
-    }
-    
+
     public boolean isLoginErrorDisplayed() {
         return wait.until(ExpectedConditions.visibilityOf(loginErrorBox)).isDisplayed();
-    }    
+    }
+
+    public String getUrl() {
+    	return driver.getCurrentUrl();
+    }
 }
