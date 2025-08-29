@@ -1,4 +1,4 @@
-Good morning, My name is Mriganka Patra. I completed my B.Tech (engineering) in Computer Science & Engineering in Academy of Technology. Currently, I am pursuing an internship with Cognizant for CRM Salesforce Selenium Automation Testing, where I am being trained on Selenium with Java, TestNG, and CRM Salesforce. I have good foundations on core java, manual testing, DBMS etc. Other than that, I'm also familiar with other programming languages like c++, python. 
+Good morning ma'am, My name is Mriganka Patra. I completed my B.Tech (engineering) in Computer Science & Engineering in Academy of Technology. Currently, I am pursuing an internship with Cognizant for CRM Salesforce Selenium Automation Testing, where I am being trained on Selenium with Java, TestNG, and CRM Salesforce. I have good foundations on core java, manual testing, DBMS etc. Other than that, I'm also familiar with other programming languages like c++, python. 
 
 //I have done certifications on... 
 
