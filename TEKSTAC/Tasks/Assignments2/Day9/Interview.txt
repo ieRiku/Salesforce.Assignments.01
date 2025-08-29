@@ -1,5 +1,9 @@
-Good morning, I’m [Your Name]. I completed my engineering in Information Technology. in [college name] Currently, I am pursuing an internship with Cognizant for CRM Salesforce Selenium Automation, where I am being trained on Selenium with Java, TestNG, and CRM Salesforce. Also I'm familiar with other programming languages like python, etc../ I have done certifications on... 
+Good morning ma'am, My name is Mriganka Patra. I completed my B.Tech (engineering) in Computer Science & Engineering in Academy of Technology. Currently, I am pursuing an internship with Cognizant for CRM Salesforce Selenium Automation Testing, where I am being trained on Selenium with Java, TestNG, and CRM Salesforce. I have good foundations on core java, manual testing, DBMS etc. Other than that, I'm also familiar with other programming languages like c++, python. 
+
+//I have done certifications on... 
 
 
 As part of my training, I have learned to automate test cases using Selenium WebDriver, manage test execution and reporting with TestNG, and follow the Page Object Model framework for better code reusability. I also got exposure to Salesforce CRM, which helped me understand how testing supports business processes and customer workflows.
+
+
 I would describe myself as a quick learner and detail-oriented, and I’m very interested in starting my career in software testing with a focus on automation and CRM applications. That’s a brief about me.
