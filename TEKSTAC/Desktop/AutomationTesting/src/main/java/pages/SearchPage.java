@@ -1,5 +1,97 @@
 package pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+
 public class SearchPage {
 
+    WebDriver driver;
+    WebDriverWait wait;
+    Actions actions;
+    JavascriptExecutor js;
+    
+    public SearchPage(WebDriver driver) {
+        this.driver = driver;
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        PageFactory.initElements(driver, this);
+    }
+
+    // Locators
+    @FindBy(id = "twotabsearchtextbox")
+    private WebElement searchBox;
+
+    @FindBy(id = "nav-search-submit-text")
+    private WebElement searchBtn;
+
+    @FindBy(xpath = "/html/body/div[1]/div[1]/span/div/h1/div/div[4]/div/div/form/span/span/span/span")
+    private WebElement sortDropdown;
+    
+    //Low to high option
+    @FindBy(xpath = "/html/body/div[4]/div/div/ul/li[2]/a")
+    private WebElement lowToHighOption;
+    
+    @FindBy(xpath = "/html/body/div[1]/div[1]/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/div/div/span/div/div/div/div[2]/div/div/div[1]/a/h2")
+    private WebElement firstProduct;
+    
+    @FindBy(xpath = "//*[@id=\"productTitle\"]")
+    private WebElement productTitle;
+
+    @FindBy(className = "a-price-whole")
+    private WebElement productPrice;
+    
+    @FindBy(xpath = "\"//div[@data-component-type='s-search-result']\"")
+    private WebElement allElementsLocated;
+
+
+    // Actions
+    public void searchProduct(String productName) {
+        wait.until(ExpectedConditions.visibilityOf(searchBox)).clear();
+        searchBox.sendKeys(productName);
+        wait.until(ExpectedConditions.elementToBeClickable(searchBtn)).click();
+    }
+
+    public void searchBlank() {
+        wait.until(ExpectedConditions.visibilityOf(searchBox)).clear();
+        wait.until(ExpectedConditions.elementToBeClickable(searchBtn)).click();
+    }
+   
+    public void sortLowToHigh() {
+		wait.until(ExpectedConditions.elementToBeClickable(sortDropdown)).click();
+		wait.until(ExpectedConditions.elementToBeClickable(lowToHighOption)).click();
+    }
+    
+    public void selectBrand(String brand) {
+        By brandLocator = By.xpath("//span[text()='" + brand + "']/preceding-sibling::div");
+        wait.until(ExpectedConditions.elementToBeClickable(brandLocator)).click();
+    }
+
+    public void clickFirstProduct() {
+        wait.until(ExpectedConditions.elementToBeClickable(firstProduct)).click();
+    }
+
+    public boolean verifyResultsDisplayed() {
+        return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@data-component-type='s-search-result']"))).size() > 0;
+    }
+    
+    public String getSelectedProductTitle() {
+        return wait.until(ExpectedConditions.visibilityOf(productTitle)).getText();
+    }
+
+    public String getSelectedProductPrice() {
+        try{
+            return wait.until(ExpectedConditions.visibilityOf(productPrice)).getText();
+        } 
+        catch (Exception e) {
+            return "Price not available";
+        }
+    }
 }
