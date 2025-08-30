@@ -17,26 +17,4 @@
       </class> <!-- tests.CartTest -->
     </classes>
   </test> <!-- LoginAndSearchTest_Chrome(failed) -->
-  <test thread-count="1" parallel="tests" name="LoginAndSearchTest_Firefox(failed)">
-    <parameter name="browser" value="firefox"/>
-    <classes>
-      <class name="tests.SearchTest">
-        <methods>
-          <include name="testApplyFilters"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- tests.SearchTest -->
-      <class name="tests.CartTest">
-        <methods>
-          <include name="modifyQuantity"/>
-          <include name="placeOrder"/>
-          <include name="deleteFromCart"/>
-          <include name="cartAddTest"/>
-          <include name="quitBrowser"/>
-          <include name="buyProducts"/>
-          <include name="setDriver"/>
-        </methods>
-      </class> <!-- tests.CartTest -->
-    </classes>
-  </test> <!-- LoginAndSearchTest_Firefox(failed) -->
 </suite> <!-- Failed suite [AmazonTestSuite] -->
