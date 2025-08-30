@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -38,11 +37,11 @@ public class CartPage {
 	@FindBy(xpath = "//span[@class='a-button a-button-primary attach-button-large attach-primary-cart-button']//input[@type='submit']")
 	private WebElement goToCart;
 	
-	@FindBy(xpath = "(//span[@class='a-truncate-cut'][contains(text(),\"HP\")])[1]")
-	private WebElement cartProductTitleElement;
-	
-//	@FindBy(css = "div[id='sc-active-06aec412-09b8-4547-9824-8430768cf21c'] span[class='a-truncate-cut']")
+//	@FindBy(xpath = "(//span[@class='a-truncate-cut'][contains(text(),\"HP\")])[1]")
 //	private WebElement cartProductTitleElement;
+	
+	@FindBy(xpath = "(//div[@class='a-row sc-list-item sc-java-remote-feature'])[1]//span[@class='a-truncate-cut']")
+	private WebElement cartProductTitleElement;
 	
 	
 	@FindBy(xpath = "(//span[@class='a-icon a-icon-small-add'])[1]")

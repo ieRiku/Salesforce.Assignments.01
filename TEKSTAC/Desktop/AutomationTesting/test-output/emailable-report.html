@@ -9,93 +9,15 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">AmazonTestSuite</th></tr>
-<tr><td><a href="#t0">LoginAndSearchTest_Chrome</a></td><td class="num">11</td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">80,901</td><td></td><td></td></tr>
+<tr><td><a href="#t0">LoginAndSearchTest_Chrome</a></td><td class="num">13</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">62,355</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">AmazonTestSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">LoginAndSearchTest_Chrome &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">tests.CartTest</td><td><a href="#m0">buyProducts</a></td><td rowspan="1">1756530973106</td><td rowspan="1">12351</td></tr><tr class="failedeven"><td><a href="#m1">placeOrder</a></td><td rowspan="1">1756530985462</td><td rowspan="1">10298</td></tr><tr><th colspan="4">LoginAndSearchTest_Chrome &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">tests.CartTest</td><td><a href="#m2">cartAddTest</a></td><td rowspan="1">1756530962674</td><td rowspan="1">4315</td></tr><tr class="passedeven"><td><a href="#m3">deleteFromCart</a></td><td rowspan="1">1756530971898</td><td rowspan="1">1205</td></tr><tr class="passedeven"><td><a href="#m4">modifyQuantity</a></td><td rowspan="1">1756530966992</td><td rowspan="1">4904</td></tr><tr class="passedodd"><td rowspan="3">tests.LoginTest</td><td><a href="#m5">invalidLoginTest</a></td><td rowspan="1">1756530918361</td><td rowspan="1">3746</td></tr><tr class="passedodd"><td><a href="#m6">validLoginTest</a></td><td rowspan="1">1756530924904</td><td rowspan="1">2301</td></tr><tr class="passedodd"><td><a href="#m7">verifyLoginTest</a></td><td rowspan="1">1756530922116</td><td rowspan="1">2786</td></tr><tr class="passedeven"><td rowspan="5">tests.SearchTest</td><td><a href="#m8">testApplyFilters</a></td><td rowspan="1">1756530932393</td><td rowspan="1">9443</td></tr><tr class="passedeven"><td><a href="#m9">testBlankSearch</a></td><td rowspan="1">1756530943692</td><td rowspan="1">2147</td></tr><tr class="passedeven"><td><a href="#m10">testSearchProduct</a></td><td rowspan="1">1756530927215</td><td rowspan="1">5175</td></tr><tr class="passedeven"><td><a href="#m11">testSortLowToHigh</a></td><td rowspan="1">1756530941841</td><td rowspan="1">1849</td></tr><tr class="passedeven"><td><a href="#m12">testViewProductDetails</a></td><td rowspan="1">1756530945840</td><td rowspan="1">16827</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">AmazonTestSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">LoginAndSearchTest_Chrome &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">tests.CartTest</td><td><a href="#m0">buyProducts</a></td><td rowspan="1">1756532733001</td><td rowspan="1">4794</td></tr><tr class="passedeven"><td><a href="#m1">cartAddTest</a></td><td rowspan="1">1756532722641</td><td rowspan="1">4246</td></tr><tr class="passedeven"><td><a href="#m2">deleteFromCart</a></td><td rowspan="1">1756532731781</td><td rowspan="1">1217</td></tr><tr class="passedeven"><td><a href="#m3">modifyQuantity</a></td><td rowspan="1">1756532726889</td><td rowspan="1">4892</td></tr><tr class="passedeven"><td><a href="#m4">placeOrder</a></td><td rowspan="1">1756532737796</td><td rowspan="1">51</td></tr><tr class="passedodd"><td rowspan="3">tests.LoginTest</td><td><a href="#m5">invalidLoginTest</a></td><td rowspan="1">1756532678990</td><td rowspan="1">3700</td></tr><tr class="passedodd"><td><a href="#m6">validLoginTest</a></td><td rowspan="1">1756532685370</td><td rowspan="1">2306</td></tr><tr class="passedodd"><td><a href="#m7">verifyLoginTest</a></td><td rowspan="1">1756532682700</td><td rowspan="1">2668</td></tr><tr class="passedeven"><td rowspan="5">tests.SearchTest</td><td><a href="#m8">testApplyFilters</a></td><td rowspan="1">1756532692823</td><td rowspan="1">8726</td></tr><tr class="passedeven"><td><a href="#m9">testBlankSearch</a></td><td rowspan="1">1756532703034</td><td rowspan="1">2957</td></tr><tr class="passedeven"><td><a href="#m10">testSearchProduct</a></td><td rowspan="1">1756532687685</td><td rowspan="1">5135</td></tr><tr class="passedeven"><td><a href="#m11">testSortLowToHigh</a></td><td rowspan="1">1756532701551</td><td rowspan="1">1481</td></tr><tr class="passedeven"><td><a href="#m12">testViewProductDetails</a></td><td rowspan="1">1756532705993</td><td rowspan="1">16648</td></tr></tbody>
 </table>
-<h2>LoginAndSearchTest_Chrome</h2><h3 id="m0">tests.CartTest#buyProducts</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //input[@name=&apos;proceedToRetailCheckout&apos;]&apos; (tried for 10 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at pages.CartPage.proceedToBuyFromCart(CartPage.java:136)
-	at tests.CartTest.buyProducts(CartTest.java:41)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@name=&apos;proceedToRetailCheckout&apos;]&quot;}
-  (Session info: chrome=139.0.7258.139)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.34.0&apos;, revision: &apos;707dcb4246*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [55b0212f6c4b899b5223562aceb017c3, findElement {value=//input[@name=&apos;proceedToRetailCheckout&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.139, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: C:\Users\atomi\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51257}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51257/devtoo..., se:cdpVersion: 139.0.7258.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 55b0212f6c4b899b5223562aceb017c3
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy13.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	... 22 more
-... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">tests.CartTest#placeOrder</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //span[@id=&apos;checkout-primary-continue-button-id-announce&apos;]&apos; (tried for 10 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at pages.CartPage.buyingIsEnabled(CartPage.java:146)
-	at tests.CartTest.placeOrder(CartTest.java:50)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[@id=&apos;checkout-primary-continue-button-id-announce&apos;]&quot;}
-  (Session info: chrome=139.0.7258.139)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.34.0&apos;, revision: &apos;707dcb4246*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [55b0212f6c4b899b5223562aceb017c3, findElement {value=//span[@id=&apos;checkout-primary-continue-button-id-announce&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.139, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: C:\Users\atomi\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51257}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51257/devtoo..., se:cdpVersion: 139.0.7258.139, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 55b0212f6c4b899b5223562aceb017c3
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy13.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	... 22 more
-... Removed 18 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">tests.CartTest#cartAddTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">tests.CartTest#deleteFromCart</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">tests.CartTest#modifyQuantity</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>LoginAndSearchTest_Chrome</h2><h3 id="m0">tests.CartTest#buyProducts</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">tests.CartTest#cartAddTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">tests.CartTest#deleteFromCart</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">tests.CartTest#modifyQuantity</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">tests.CartTest#placeOrder</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m5">tests.LoginTest#invalidLoginTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m6">tests.LoginTest#validLoginTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 <h3 id="m7">tests.LoginTest#verifyLoginTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
