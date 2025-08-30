@@ -65,9 +65,10 @@ public class SearchPage {
         wait.until(ExpectedConditions.elementToBeClickable(searchBtn)).click();
     }
 
-    public void searchBlank() {
+    public String searchBlank() {
         wait.until(ExpectedConditions.visibilityOf(searchBox)).clear();
         wait.until(ExpectedConditions.elementToBeClickable(searchBtn)).click();
+        return driver.getTitle();
     }
    
     public void sortLowToHigh() {

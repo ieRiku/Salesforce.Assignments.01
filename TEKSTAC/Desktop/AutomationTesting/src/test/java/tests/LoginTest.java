@@ -1,6 +1,7 @@
 package tests;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import base.ConfigLoader;
@@ -10,13 +11,14 @@ import pages.LoginPage;
 public class LoginTest extends DriverSetup{
 	static LoginPage lp;
 	
+	@Parameters("browser")
 	@BeforeClass
-	public static void setDriver() {
+	public static void setDriver(String browser) {
 		ConfigLoader.loadConfig();
-		lp = new LoginPage(DriverSetup.getDriver());
+		lp = new LoginPage(DriverSetup.getDriver(browser));
 	}
 
-	@Test (priority=3)
+	@Test (groups = "login", priority=3)
 	public static void validLoginTest() throws InterruptedException {
 		lp.clickLoginButton();
 		lp.enterEmail(ConfigLoader.getProperty("username"));
@@ -25,7 +27,7 @@ public class LoginTest extends DriverSetup{
 		lp.clickSubmitLogin();
 	}
 
-	@Test (priority=1)
+	@Test (groups = "login", priority=1)
 	public static void invalidLoginTest() throws InterruptedException {
 		lp.clickLoginButton();
 		lp.enterEmail("invalidemail@gmail.com");
@@ -34,7 +36,7 @@ public class LoginTest extends DriverSetup{
 		lp.clickSubmitLogin();
 	}
 
-	@Test (priority=2)
+	@Test (groups = "login", priority=2)
 	public static void verifyLoginTest() throws InterruptedException {
 		lp.navigateToUrl(ConfigLoader.getProperty("url"));
 		System.out.println(lp.loginButtonEnabled());

@@ -2,6 +2,7 @@ package tests;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import base.DriverSetup;
@@ -10,30 +11,31 @@ import pages.CartPage;
 public class CartTest extends DriverSetup {
 	static CartPage cp;
 	
+	@Parameters("browser")
 	@BeforeClass
-	public static void setDriver() {
-		cp = new CartPage(DriverSetup.getDriver());
+	public static void setDriver(String browser) {
+		cp = new CartPage(DriverSetup.getDriver(browser));
 	}
 	
-	@Test (priority = 1)
+	@Test (groups = "cart", dependsOnGroups = "search", priority = 1)
 	public static void cartAddTest() throws InterruptedException {
 		Thread.sleep(500);
 		cp.cartAdd();
 	}
 	
-	@Test (priority = 2)
+	@Test (groups = "cart", dependsOnGroups = "search", priority = 2)
 	public static void modifyQuantity() throws InterruptedException {
 		Thread.sleep(500);
 		cp.quantityModify();
 	}
 	
-	@Test (priority = 3)
+	@Test (groups = "cart", dependsOnGroups = "search", priority = 3)
 	public static void deleteFromCart() throws InterruptedException {
 		Thread.sleep(1000);
 		cp.deleteProductFromCart();
 	}
 	
-	@Test (priority = 4)
+	@Test (groups = "cart", dependsOnGroups = "search", priority = 4)
 	public static void buyProducts() throws InterruptedException {
 		Thread.sleep(2000);
 		cp.proceedToBuyFromCart();
@@ -43,7 +45,7 @@ public class CartTest extends DriverSetup {
 		}
 	}
 	
-	@Test (priority = 5)
+	@Test (groups = "cart", dependsOnGroups = "search", priority = 5)
 	public static void placeOrder() {
 		boolean canMoveToOrder = cp.buyingIsEnabled();
 		if(!canMoveToOrder) {
