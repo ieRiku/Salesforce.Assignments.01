@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="AmazonTestSuite">
+	<listeners>
+		<listener class-name="runners.TestListener"/>
+	</listeners>
     <test name="LoginAndSearchTest">
         <classes>
             <class name="tests.LoginTest"/>
