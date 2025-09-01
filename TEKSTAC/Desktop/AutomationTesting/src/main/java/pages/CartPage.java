@@ -7,6 +7,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import base.DriverSetup;
+
 import java.time.Duration;
 
 public class CartPage {
@@ -144,5 +147,10 @@ public class CartPage {
 	public boolean buyingIsEnabled() {
 		wait.until(ExpectedConditions.visibilityOf(orderPlace));
 		return orderPlace.isEnabled();
+	}
+	
+	public static void main(String[] args) {
+		CartPage cp = new CartPage(DriverSetup.getDriver("chrome"));
+		;
 	}
 }

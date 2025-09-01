@@ -42,10 +42,13 @@ public class SearchPage {
     @FindBy(xpath = "/html/body/div[1]/div[1]/div[1]/div[1]/div/span[1]/div[1]/div[3]/div/div/div/div/span/div/div/div/div[2]/div/div/div[1]/a/h2")
     private WebElement firstProduct;
     
-    @FindBy(xpath = "//*[@id=\"productTitle\"]")
+    @FindBy(xpath = "//*[@id=\"titleSection\"]//*[@id=\"productTitle\"]")
     private WebElement productTitle;
 
-    @FindBy(className = "a-price-whole")
+//    @FindBy(className = "a-price-whole")
+//    private WebElement productPrice;
+  
+    @FindBy(xpath = "//*[@id=\"corePriceDisplay_desktop_feature_div\"]/div[1]/span[3]/span[2]/span[2]")
     private WebElement productPrice;
     
     @FindBy(xpath = "\"//div[@data-component-type='s-search-result']\"")
@@ -56,7 +59,6 @@ public class SearchPage {
 
     @FindBy(xpath = "//li[@id='p_72/1318476031']/span/div/a/i")
     private WebElement ratingButton;
-    
     
     // Actions
     public void searchProduct(String productName) {

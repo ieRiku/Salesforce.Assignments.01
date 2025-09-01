@@ -28,12 +28,9 @@ public class DriverSetup {
 	}
 
 	public static void switchTab() {
-		// Switch to the newest (child) tab
-		System.out.println(driver.getWindowHandle());
 		for (String handle : driver.getWindowHandles()) {
 			if (!handle.equals(driver.getWindowHandle())) {
 				driver.switchTo().window(handle);
-				System.out.println(driver.getWindowHandle());
 				break;
 			}
 		}

@@ -13,9 +13,7 @@ public class CartTest extends DriverSetup {
 	
 	@Parameters("browser")
 	@BeforeClass
-	public static void setDriver(String browser) {
-		DriverSetup.switchTab();
-		System.out.println(DriverSetup.getDriver(browser).getWindowHandle());
+	public static void setDriver(String browser) throws InterruptedException {
 		cp = new CartPage(DriverSetup.getDriver(browser));
 	}
 	

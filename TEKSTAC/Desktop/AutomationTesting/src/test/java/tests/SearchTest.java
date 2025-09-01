@@ -62,6 +62,8 @@ public class SearchTest {
     public void testViewProductDetails() {
        searchPage.searchProduct("laptop");
        searchPage.clickFirstProduct();
+       
+       DriverSetup.switchTab();
 
        String title = searchPage.getSelectedProductTitle();
        String price = searchPage.getSelectedProductPrice();
