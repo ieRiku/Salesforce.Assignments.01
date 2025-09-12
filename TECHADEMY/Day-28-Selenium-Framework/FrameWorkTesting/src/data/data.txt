@@ -1,3 +1,0 @@
-username		password
-ramesh@gmail.com, pass358
-manish@gmail.com, pass359
