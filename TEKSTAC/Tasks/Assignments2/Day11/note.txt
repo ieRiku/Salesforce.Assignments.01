@@ -1,0 +1,7 @@
+docker pull selenium/standalone-chrome
+ 
+docker run -d --name selenium-chrome -p 4444:4444 selenium/standalone-chrome
+ 
+
+
+java -jar selenium-server-4.22.0.jar hub

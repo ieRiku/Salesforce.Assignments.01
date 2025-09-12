@@ -1,0 +1,28 @@
+Test Cases:
+
+- Launch the Browser
+- Verify the Google title()
+- Verify the GoDaddy Title()
+- Verify the Yahoo Title()
+- Browser()
+
+TestNG execution flow
+
+- closeBrowser()
+- launch the Browser
+- Verify the Google title
+- Verify the GoDaddy Title
+- Verify the Yahoo Title
+
+TestNG - Priority process
+
+Syntax:
+
+
+TASK.............................................
+
+- Invoke the CRM application
+- Capture the Title of the page
+- Enter the UserName - capture the UserName
+- Enter the password
+- Click on Login - Home Page should be display

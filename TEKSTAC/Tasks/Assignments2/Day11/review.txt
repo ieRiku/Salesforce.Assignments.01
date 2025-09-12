@@ -1,0 +1,94 @@
+### *Stage 1: Agile & Functional Testing*
+ 
+1. *Agile & Functional Testing*
+ 
+   * Functional Testing fundamentals
+   * Agile Methodologies & Scrum framework
+   * Agile Sprint activities (planning, stand-up, review, retrospective)
+ 
+2. *Salesforce / MSCRM*
+ 
+   * End-to-end CRM setup: object creation, Lightning App Builder, process automation
+   * Security model & user access management
+   * Sales Cloud: lead-to-quote flow, opportunity management
+   * Service Cloud: case management, SLAs
+   * Analytics: reports, dashboards, data tools (Data Loader)
+   * Collaboration: Chatter
+ 
+---
+ 
+### *Stage 2: Automation, Development & DevOps*
+ 
+1. *Java (Core & Advanced)*
+ 
+   * Basics: Data types, variables, arrays, strings, OOP
+   * Inheritance, Abstraction, Encapsulation
+   * Exception Handling, Collections
+   * File & Thread Handling, JDBC
+ 
+2. *Data Structures & Algorithms*
+ 
+   * Core concepts and problem-solving
+   * Common algorithms and optimizations
+ 
+3. *Selenium Basics*
+ 
+   * Selenium overview, architecture, components (WebDriver, IDE, Grid)
+   * Environment setup, cross-browser & cross-platform
+   * Selenium WebDriver & Locators
+   * Launching AUT, finding elements (findElement vs findElements)
+   * Handling UI elements: radio, dropdown, checkbox, textbox, navigation
+   * XPath & CSS selectors (absolute, relative, advanced conditions)
+   * JavaScript Executor, Date pickers
+ 
+4. *Advanced Selenium Concepts*
+ 
+   * Waits: implicit, explicit, fluent
+   * Shadow DOM, iFrames, multiple windows/tabs
+   * Actions: drag & drop, slider, mouse & keyboard operations
+   * Alerts, dynamic tables, tooltips, broken links, screenshots
+ 
+5. *TestNG Framework*
+ 
+   * Annotations, assertions, priorities, dependencies
+   * Multi-browser testing, rerun failed tests
+   * Data-driven testing (DataProvider)
+   * Reports: default, extent
+   * Parallel test execution
+ 
+6. *Automation Frameworks*
+ 
+   * Page Object Model (POM), Page Factory
+   * Maven integration
+   * Linear, Data-driven, Hybrid, Keyword-driven frameworks
+   * Design patterns in automation
+   * Apache POI (Excel), JSON, XML, properties, text files
+ 
+7. *GenAI in Automation*
+ 
+   * Basics of GenAI & LLMs
+   * Generating test cases, test data & dynamic XPaths
+ 
+8. *Version Control (Git)*
+ 
+   * Understanding Git
+   * Setting Up Git
+   * Basic Git Commands
+   * Branching and Merging
+   * Remote Repositories
+   * Collaborating with Git
+ 
+9. *Build Tools (Maven)*
+   * Introduction to Maven
+   * Creating and Managing Maven Projects
+   * Maven Build Lifecycle (clean, compile, test, package)
+ 
+10. *CI/CD & Jenkins*
+* Introduction to CI/CD and DevOps
+* Jenkins Overview and Jobs Configuration
+* Integrating Selenium Tests into Jenkins Pipelines
+* Groovy Script Introduction and Syntax
+ 
+11. *Selenium Grid & Parallel Execution*
+ 
+12. Docker Containerization
